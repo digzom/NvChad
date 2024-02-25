@@ -79,19 +79,19 @@ M.tabufline = {
 
   n = {
     -- cycle through buffers
-    ["<tab>"] = {
-      function()
-        require("nvchad.tabufline").tabuflineNext()
-      end,
-      "Goto next buffer",
-    },
-
-    ["<S-tab>"] = {
-      function()
-        require("nvchad.tabufline").tabuflinePrev()
-      end,
-      "Goto prev buffer",
-    },
+    -- ["<tab>"] = {
+    --   function()
+    --     require("nvchad.tabufline").tabuflineNext()
+    --   end,
+    --   "Goto next buffer",
+    -- },
+    --
+    -- ["<S-tab>"] = {
+    --   function()
+    --     require("nvchad.tabufline").tabuflinePrev()
+    --   end,
+    --   "Goto prev buffer",
+    -- },
 
     -- close buffer + hide terminal buffer
     ["<leader>x"] = {
@@ -221,26 +221,26 @@ M.lspconfig = {
       "Diagnostic setloclist",
     },
 
-    ["<leader>wa"] = {
-      function()
-        vim.lsp.buf.add_workspace_folder()
-      end,
-      "Add workspace folder",
-    },
-
-    ["<leader>wr"] = {
-      function()
-        vim.lsp.buf.remove_workspace_folder()
-      end,
-      "Remove workspace folder",
-    },
-
-    ["<leader>wl"] = {
-      function()
-        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-      end,
-      "List workspace folders",
-    },
+    -- ["<leader>wa"] = {
+    --   function()
+    --     vim.lsp.buf.add_workspace_folder()
+    --   end,
+    --   "Add workspace folder",
+    -- },
+    --
+    -- ["<leader>wr"] = {
+    --   function()
+    --     vim.lsp.buf.remove_workspace_folder()
+    --   end,
+    --   "Remove workspace folder",
+    -- },
+    --
+    -- ["<leader>wl"] = {
+    --   function()
+    --     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    --   end,
+    --   "List workspace folders",
+    -- },
   },
 
   v = {
@@ -270,9 +270,9 @@ M.telescope = {
 
   n = {
     -- find
-    ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "Find files" },
+    -- ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "Find files" },
     ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Find all" },
-    ["<leader>fw"] = { "<cmd> Telescope live_grep <CR>", "Live grep" },
+    -- ["<leader>fw"] = { "<cmd> Telescope live_grep <CR>", "Live grep" },
     ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "Find buffers" },
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "Help page" },
     ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "Find oldfiles" },
@@ -359,25 +359,25 @@ M.nvterm = {
   },
 }
 
-M.whichkey = {
-  plugin = true,
-
-  n = {
-    ["<leader>wK"] = {
-      function()
-        vim.cmd "WhichKey"
-      end,
-      "Which-key all keymaps",
-    },
-    ["<leader>wk"] = {
-      function()
-        local input = vim.fn.input "WhichKey: "
-        vim.cmd("WhichKey " .. input)
-      end,
-      "Which-key query lookup",
-    },
-  },
-}
+-- M.whichkey = {
+--   plugin = true,
+--
+--   n = {
+--     ["<leader>wK"] = {
+--       function()
+--         vim.cmd "WhichKey"
+--       end,
+--       "Which-key all keymaps",
+--     },
+--     ["<leader>wk"] = {
+--       function()
+--         local input = vim.fn.input "WhichKey: "
+--         vim.cmd("WhichKey " .. input)
+--       end,
+--       "Which-key query lookup",
+--     },
+--   },
+-- }
 
 M.blankline = {
   plugin = true,
