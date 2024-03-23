@@ -14,13 +14,29 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
     "gleam",
+    "python"
   },
   indent = {
     enable = true,
-    -- disable = {
-    --   "python"
-    -- },
+    disable = {
+      "python"
+    },
   },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "<C-s>",
+      node_incremental = "<C-s>",
+      scope_incremental = "<C-l>",
+      node_decremental = "<C-x>",
+    }
+  },
+  highlights = {
+    enable = true
+  },
+  set_custom_captures = {
+    ["@string.atom.elixir"] = "ThisOne"
+  }
 }
 
 M.mason = {
@@ -41,6 +57,13 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
+    --
+    -- markdown
+    "markdownlint",
+    "marksman",
+    "mdformat",
+
+    "pyright",
 
     -- shell stuff
     "shfmt",

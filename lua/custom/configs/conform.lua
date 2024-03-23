@@ -5,11 +5,19 @@ local options = {
   formatters_by_ft = {
     lua = { "stylua" },
 
-    javascript = { {"prettier", "prettierd"} },
-    typescript = { {"prettier", "prettierd"} },
+    javascript = { { "prettier", "prettierd" } },
+    typescript = { { "prettier", "prettierd" } },
+    json = { { "prettier", "prettierd" } },
     css = { "prettier" },
     html = { "prettier" },
-
+    markdown = { "mdformat" },
+    python = function(bufnr)
+      if require("conform").get_formatter_info("ruff_format", bufnr).available then
+        return { "ruff_format" }
+      else
+        return { "isort", "black" }
+      end
+    end,
     sh = { "shfmt" },
     go = { "gofmt", "goimports" },
     elixir = { "mix format" },

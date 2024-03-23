@@ -12,7 +12,18 @@ local plugins = {
       require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig
   },
-  { "gleam-lang/gleam.vim", enabled = true, lazy = false },
+  { "tjdevries/colorbuddy.nvim", enabled = true, lazy = false },
+  { "gleam-lang/gleam.vim",      enabled = true, lazy = false },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
+  { "DavidAnson/markdownlint",  enabled = true, lazy = false },
+  { "artempyanykh/marksman",    enabled = true, lazy = false },
   {
     "kdheepak/lazygit.nvim",
     enabled = true,

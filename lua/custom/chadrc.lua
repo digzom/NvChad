@@ -6,6 +6,7 @@ local highlights = require "custom.highlights"
 
 M.ui = {
   theme = "gruvbox",
+  -- theme = require("custom.configs.different_atoms_theme"),
   theme_toggle = { "gruvbox", "one_light" },
 
   hl_override = highlights.override,

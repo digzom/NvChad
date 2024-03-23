@@ -5,13 +5,27 @@
 --   command = "tabdo wincmd =",
 -- })
 
+vim.api.nvim_command('autocmd FileType elixir syntax match ElixirAtom "\\<:\\w*\\>"')
+
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "go",
   callback = function()
     vim.opt_local.expandtab = true -- Use spaces instead of tabs
-    vim.opt_local.shiftwidth = 4 -- Set indentation level to  4 spaces
-    vim.opt_local.tabstop = 4 -- Set tab width to  4 spaces
+    vim.opt_local.shiftwidth = 4   -- Set indentation level to  4 spaces
+    vim.opt_local.tabstop = 4      -- Set tab width to  4 spaces
   end,
+})
+
+-- on yank highlighting
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank {
+      timeout = 50
+    }
+  end,
+  group = highlight_group,
+  pattern = '*',
 })
 
 -- vim.opt.format_on_save = false
@@ -19,9 +33,6 @@ vim.opt.scrolloff = 8
 -- vim.opt.relativenumber = true
 vim.opt.rnu = true
 vim.opt.clipboard = ""
-vim.highlight.on_yank {
-  timeout = 40,
-}
 
 vim.opt.wrap = false
 

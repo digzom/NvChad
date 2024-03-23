@@ -22,6 +22,8 @@ M.general = {
       "LSP declaration",
     },
 
+    ["gx"] = { ':vsplit<CR>:lua vim.lsp.buf.definition()<CR>', "Splitted LSP definition" },
+
     ["gd"] = {
       function()
         vim.lsp.buf.definition()
