@@ -46,6 +46,13 @@ M.general = {
     ["<leader>b"] = { "<cmd> enew <CR>", "New buffer" },
     ["<leader>ch"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
 
+    ["<leader>cf"] = {
+      function()
+        require("conform").format({ async = true })
+      end,
+      "Conform Formatting",
+    },
+
     ["<leader>fm"] = {
       function()
         vim.lsp.buf.format { async = true }
@@ -272,7 +279,7 @@ M.telescope = {
     -- find
     -- ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "Find files" },
     ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Find all" },
-    -- ["<leader>fw"] = { "<cmd> Telescope live_grep <CR>", "Live grep" },
+    ["<leader>fw"] = { "<cmd> Telescope live_grep <CR> no_ignore=true hidden=true follow=true", "Live grep" },
     ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "Find buffers" },
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "Help page" },
     ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "Find oldfiles" },
@@ -359,25 +366,25 @@ M.nvterm = {
   },
 }
 
--- M.whichkey = {
---   plugin = true,
---
---   n = {
---     ["<leader>wK"] = {
---       function()
---         vim.cmd "WhichKey"
---       end,
---       "Which-key all keymaps",
---     },
---     ["<leader>wk"] = {
---       function()
---         local input = vim.fn.input "WhichKey: "
---         vim.cmd("WhichKey " .. input)
---       end,
---       "Which-key query lookup",
---     },
---   },
--- }
+M.whichkey = {
+  plugin = true,
+
+  n = {
+    ["<leader>WK"] = {
+      function()
+        vim.cmd "WhichKey"
+      end,
+      "Which-key all keymaps",
+    },
+    ["<leader>Wk"] = {
+      function()
+        local input = vim.fn.input "WhichKey: "
+        vim.cmd("WhichKey " .. input)
+      end,
+      "Which-key query lookup",
+    },
+  },
+}
 
 M.blankline = {
   plugin = true,

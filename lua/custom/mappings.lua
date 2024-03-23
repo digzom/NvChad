@@ -6,9 +6,10 @@ M.general = {
     ["J"] = { "mzJ`z" },
     ["<C-d>"] = { "<C-d>zz" },
     ["<C-u>"] = { "<C-u>zz" },
-    -- ["n"] = { "nzzzv" },
-    -- ["N"] = { "Nzzzv" },
+    ["n"] = { "nzzzv" },
+    ["N"] = { "Nzzzv" },
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
+    ["<leader>lg"] = { "<cmd>LazyGit<CR>" },
     ["<leader>y"] = { '"+y' },
     ["<leader>Y"] = { '"+Y' },
     ["<leader>d"] = { '"_id' },
@@ -105,13 +106,6 @@ M.general = {
       "Diagnostic setloclist",
     },
 
-    --  format with conform
-    ["<leader>lf"] = {
-      function()
-        require("conform").format()
-      end,
-      "formatting",
-    },
     ["<leader>w"] = { ":w<CR>" },
     ["-"] = { ":split<CR>" },
     ["|"] = { ":vsplit<CR>" },

@@ -13,6 +13,7 @@ M.treesitter = {
     "c",
     "markdown",
     "markdown_inline",
+    "gleam",
   },
   indent = {
     enable = true,
@@ -34,6 +35,7 @@ M.mason = {
     "typescript-language-server",
     "deno",
     "prettier",
+    "prettierd",
     "gopls",
 
     -- c/cpp stuff
@@ -49,9 +51,19 @@ M.mason = {
 M.nvimtree = {
   git = {
     enable = true,
+    ignore = false,
   },
-
+  hijack_unnamed_buffer_when_opening = false,
+  filters = {
+    dotfiles = false,
+    exclude = { vim.fn.stdpath "config" .. "/lua/custom" },
+  },
   renderer = {
+    highlight_diagnostics = "all",
+    highlight_opened_files = "name",
+    indent_markers = {
+      enable = true,
+    },
     highlight_git = true,
     icons = {
       show = {

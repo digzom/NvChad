@@ -4,10 +4,28 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd", "gopls" }
+local servers = { "html", "cssls", "tsserver", "clangd", "gopls", "gleam" }
 
 for _, lsp in ipairs(servers) do
-  if lspconfig[lsp] == 'gopls' then
+  if lspconfig[lsp] == "gleam" then
+    lspconfig[lsp].setup {
+      on_attach = on_attach,
+      capabilities = capabilities,
+      cmd = { "gleam", "lsp" },
+      filetypes = { "gleam" },
+      root_dir = lspconfig.gleam.util.root_pattern("gleam.toml", ".git"),
+      settings = {
+        gopls = {
+          completeUnimported = false,
+          usePlaceholders = true,
+          analyses = {
+            unusedparams = true,
+          },
+        },
+      },
+    }
+  end
+  if lspconfig[lsp] == "gopls" then
     lspconfig[lsp].setup {
       on_attach = on_attach,
       capabilities = capabilities,

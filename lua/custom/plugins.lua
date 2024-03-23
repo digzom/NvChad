@@ -12,6 +12,7 @@ local plugins = {
       require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig
   },
+  { "gleam-lang/gleam.vim", enabled = true, lazy = false },
   {
     "kdheepak/lazygit.nvim",
     enabled = true,
