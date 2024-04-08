@@ -14,8 +14,8 @@ vim.api.nvim_create_autocmd("BufWrite", {
 
 if vim.g.nvchad_theme == "gruvbox" then
   -- vim.api.nvim_set_hl(0, "@string.atom.elixir", { fg = "#d79921" })
-  vim.api.nvim_set_hl(0, "@string.atom.elixir", { fg = "#9fd07F" })
-  vim.api.nvim_set_hl(0, "@string.escape.elixir", { fg = "#689d6a" })
+  vim.api.nvim_set_hl(0, "@string.atom.elixir", { fg = "#91b384" })
+  vim.api.nvim_set_hl(0, "@string.escape.elixir", { fg = "#9fd07F" })
   vim.api.nvim_set_hl(0, "@variable.elixir", { fg = "#eae0b3" })
 end
 

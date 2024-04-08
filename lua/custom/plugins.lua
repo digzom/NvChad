@@ -13,7 +13,7 @@ local plugins = {
     end, -- Override to setup mason-lspconfig
   },
   { "tjdevries/colorbuddy.nvim", enabled = true, lazy = false },
-  { "gleam-lang/gleam.vim",      enabled = true, lazy = false },
+  { "gleam-lang/gleam.vim", enabled = true, lazy = false },
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -22,8 +22,8 @@ local plugins = {
       vim.fn["mkdp#util#install"]()
     end,
   },
-  { "DavidAnson/markdownlint",  enabled = true, lazy = false },
-  { "artempyanykh/marksman",    enabled = true, lazy = false },
+  { "DavidAnson/markdownlint", enabled = true, lazy = false },
+  { "artempyanykh/marksman", enabled = true, lazy = false },
   {
     "kdheepak/lazygit.nvim",
     enabled = true,
@@ -65,13 +65,22 @@ local plugins = {
       local elixirls = require "elixir.elixirls"
 
       elixir.setup {
-        nextls = { enable = true },
-        credo = {},
+        nextls = {
+          enable = true,
+          init_options = {
+            experimental = {
+              completions = {
+                enable = true,
+              },
+            },
+          },
+        },
+        credo = { enable = true },
         elixirls = {
           enable = true,
           settings = elixirls.settings {
-            dialyzerEnabled = false,
-            enableTestLenses = false,
+            dialyzerEnabled = true,
+            enableTestLenses = true,
           },
           on_attach = function(client, bufnr)
             vim.keymap.set("n", "<space>fp", ":ElixirFromPipe<cr>", { buffer = true, noremap = true })

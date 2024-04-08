@@ -6,13 +6,22 @@ local M = {}
 
 ---@type Base46HLGroupsList
 M.override = {
-  ThisOne = {
-    fg = "red"
-  },
   Comment = {
     italic = true,
   },
 }
+
+if vim.g.nvchad_theme == "gruvbox" then
+  M.override = {
+    IndentBlanklineContextStart = {
+      bg = "#2D2D2D"
+    },
+
+    CursorLine = {
+      bg = "#202020"
+    },
+  }
+end
 
 ---@type HLTable
 M.add = {

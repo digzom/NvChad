@@ -3,6 +3,7 @@ local M = {}
 
 M.general = {
   n = {
+    ["<leader>rt"] = { "<cmd>lua vim.lsp.codelens.run() <CR>" },
     ["J"] = { "mzJ`z" },
     ["<C-d>"] = { "<C-d>zz" },
     ["<C-u>"] = { "<C-u>zz" },
@@ -22,11 +23,12 @@ M.general = {
       "LSP declaration",
     },
 
-    ["gx"] = { ':vsplit<CR>:lua vim.lsp.buf.definition()<CR>', "Splitted LSP definition" },
+    ["g|"] = { ":vsplit<CR>:lua vim.lsp.buf.definition()<CR>zz", "Splitted LSP definition" },
 
     ["gd"] = {
       function()
         vim.lsp.buf.definition()
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("zz", true, true, true), "n", true)
       end,
       "LSP definition",
     },

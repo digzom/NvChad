@@ -32,7 +32,7 @@ M.treesitter = {
     }
   },
   highlights = {
-    enable = true
+    enable = false
   },
   set_custom_captures = {
     ["@string.atom.elixir"] = "ThisOne"

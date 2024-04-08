@@ -16,7 +16,7 @@ M.general = {
   },
 
   n = {
-    ["<leader>mp"] = {"<cmd> MarkdownPreviewToggle <CR>"},
+    ["<leader>mp"] = { "<cmd> MarkdownPreviewToggle <CR>" },
     ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights" },
     -- switch between windows
     ["<C-h>"] = { "<C-w>h", "Window left" },

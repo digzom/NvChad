@@ -33,7 +33,7 @@ vim.opt.scrolloff = 8
 -- vim.opt.relativenumber = true
 vim.opt.rnu = true
 vim.opt.clipboard = ""
-
+vim.opt.cursorline = true
 vim.opt.wrap = false
 
 vim.opt.swapfile = false
