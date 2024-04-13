@@ -11,10 +11,11 @@ M.general = {
     ["N"] = { "Nzzzv" },
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<leader>lg"] = { "<cmd>LazyGit<CR>" },
-    ["<leader>y"] = { '"+y' },
-    ["<leader>Y"] = { '"+Y' },
-    ["<leader>d"] = { '"_id' },
-    ["<leader>a"] = { ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left>" },
+    ["<leader>y"] = { '"+y' }, -- copy to system clipboard
+    ["<leader>Y"] = { '"+Y' }, -- copy entire line to system clipboard
+    ["<leader>d"] = { '"_d' }, -- delete to void
+    ["<leader>P"] = { '"_dP' }, -- delete and please do not yank
+    ["<leader>a"] = { ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left>" }, -- change the thing in the entire file
 
     ["gD"] = {
       function()
@@ -135,7 +136,7 @@ M.general = {
     ["J"] = { ":m '>+1<CR>gv=gv" },
     ["K"] = { ":m '<-2<CR>gv=gv" },
     ["<leader>y"] = { '"+y' },
-    ["<leader>d"] = { '"_id' },
+    ["<leader>d"] = { '"_d' },
   },
 }
 
