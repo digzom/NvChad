@@ -79,7 +79,7 @@ local plugins = {
         elixirls = {
           enable = true,
           settings = elixirls.settings {
-            dialyzerEnabled = true,
+            dialyzerEnabled = false,
             enableTestLenses = true,
           },
           on_attach = function(client, bufnr)

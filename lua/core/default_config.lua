@@ -43,24 +43,6 @@ local panels = {
     "░▒▓█▓▒░░▒▓█▓▒░    ░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░░▒▓█▓▒░ ",
     "░▒▓█▓▒░░▒▓█▓▒░    ░▒▓█▓▒░      ░▒▓█████████████▓▒░  ░▒▓█▓▒░░▒▓█▓▒░ ",
   },
-  boom = {
-    "BBBBBBBBBBBBBBBBB                                                              !!!  ",
-    "B::::::::::::::::B                                                            !!:!! ",
-    "B::::::BBBBBB:::::B                                                           !:::! ",
-    "BB:::::B     B:::::B                                                          !:::! ",
-    "  B::::B     B:::::B   ooooooooooo      ooooooooooo      mmmmmmm    mmmmmmm   !:::! ",
-    "  B::::B     B:::::B oo:::::::::::oo  oo:::::::::::oo  mm:::::::m  m:::::::mm !:::! ",
-    "  B::::BBBBBB:::::B o:::::::::::::::oo:::::::::::::::om::::::::::mm::::::::::m!:::! ",
-    "  B:::::::::::::BB  o:::::ooooo:::::oo:::::ooooo:::::om::::::::::::::::::::::m!:::!",
-    "  B::::BBBBBB:::::B o::::o     o::::oo::::o     o::::om:::::mmm::::::mmm:::::m!:::!",
-    "  B::::B     B:::::Bo::::o     o::::oo::::o     o::::om::::m   m::::m   m::::m!:::!",
-    "  B::::B     B:::::Bo::::o     o::::oo::::o     o::::om::::m   m::::m   m::::m!!:!!",
-    "  B::::B     B:::::Bo::::o     o::::oo::::o     o::::om::::m   m::::m   m::::m !!! ",
-    "BB:::::BBBBBB::::::Bo:::::ooooo:::::oo:::::ooooo:::::om::::m   m::::m   m::::m     ",
-    "B:::::::::::::::::B o:::::::::::::::oo:::::::::::::::om::::m   m::::m   m::::m !!! ",
-    "B::::::::::::::::B   oo:::::::::::oo  oo:::::::::::oo m::::m   m::::m   m::::m!!:!!",
-    "BBBBBBBBBBBBBBBBB      ooooooooooo      ooooooooooo   mmmmmm   mmmmmm   mmmmmm !!! "
-  },
   byob = {
     " ░░▒▒▓▓████▊▊▋▋▍▍▍▎▏▏▎▏▏▎▍▍▌▌▋▋▊▊████▓▓▒▒░░ ",
     " ░                                        ░ ",
@@ -78,7 +60,7 @@ local panels = {
 
 local function get_panel(panels_table)
   local panel_keys = {}
-  local random_number = math.random(1, 6)
+  local random_number = math.random(1, 5)
 
   for key in pairs(panels_table) do
     table.insert(panel_keys, key)
