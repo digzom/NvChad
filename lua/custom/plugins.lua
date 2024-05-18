@@ -75,7 +75,7 @@ local plugins = {
             },
           },
         },
-        credo = { enable = true },
+        credo = { enable = false },
         elixirls = {
           enable = true,
           settings = elixirls.settings {

@@ -11,10 +11,10 @@ M.general = {
     ["N"] = { "Nzzzv" },
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<leader>lg"] = { "<cmd>LazyGit<CR>" },
-    ["<leader>y"] = { '"+y' }, -- copy to system clipboard
-    ["<leader>Y"] = { '"+Y' }, -- copy entire line to system clipboard
-    ["<leader>d"] = { '"_d' }, -- delete to void
-    ["<leader>P"] = { '"_dP' }, -- delete and please do not yank
+    ["<leader>y"] = { '"+y' },                                            -- copy to system clipboard
+    ["<leader>Y"] = { '"+Y' },                                            -- copy entire line to system clipboard
+    ["<leader>d"] = { '"_d' },                                            -- delete to void
+    ["<leader>P"] = { '"_dP' },                                           -- delete and please do not yank
     ["<leader>a"] = { ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left>" }, -- change the thing in the entire file
 
     ["gD"] = {
@@ -26,11 +26,7 @@ M.general = {
 
     ["g|"] = { ":vsplit<CR>:lua vim.lsp.buf.definition()<CR>zz", "Splitted LSP definition" },
 
-    ["gd"] = {
-      function()
-        vim.lsp.buf.definition()
-        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("zz", true, true, true), "n", true)
-      end,
+    ["gd"] = { ":lua vim.lsp.buf.definition()<CR>zz",
       "LSP definition",
     },
 
