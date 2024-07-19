@@ -12,8 +12,23 @@ local plugins = {
       require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig
   },
-  { "tjdevries/colorbuddy.nvim", enabled = true, lazy = false },
-  { "gleam-lang/gleam.vim", enabled = true, lazy = false },
+  {
+    "tjdevries/colorbuddy.nvim",
+    enabled = true,
+    lazy = false,
+  },
+  {
+    "gleam-lang/gleam.vim",
+    enabled = true,
+    lazy = false,
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    ft = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end
+  },
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -23,7 +38,7 @@ local plugins = {
     end,
   },
   { "DavidAnson/markdownlint", enabled = true, lazy = false },
-  { "artempyanykh/marksman", enabled = true, lazy = false },
+  { "artempyanykh/marksman",   enabled = true, lazy = false },
   {
     "kdheepak/lazygit.nvim",
     enabled = true,
@@ -57,6 +72,19 @@ local plugins = {
     end,
   },
   {
+    "tpope/vim-dadbod",
+    lazy = true,
+    dependencies = {
+      "kristijanhusak/vim-dadbod-ui",
+      { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
+    },
+    opts = {},
+    config = function()
+      require("custom.configs.dadbod").setup()
+    end,
+    cmd = { "DBUI", "DBUIToggle", "DBUIAddConnection", "DBUIFindBuffer", "DBUIRenameBuffer", "DBUILastQueryInfo" },
+  },
+  {
     "elixir-tools/elixir-tools.nvim",
     version = "*",
     event = { "BufReadPre", "BufNewFile" },
@@ -66,7 +94,7 @@ local plugins = {
 
       elixir.setup {
         nextls = {
-          enable = true,
+          enable = false,
           init_options = {
             experimental = {
               completions = {
@@ -82,7 +110,7 @@ local plugins = {
             dialyzerEnabled = false,
             enableTestLenses = true,
           },
-          on_attach = function(client, bufnr)
+          on_attach = function(_, _)
             vim.keymap.set("n", "<space>fp", ":ElixirFromPipe<cr>", { buffer = true, noremap = true })
             vim.keymap.set("n", "<space>tp", ":ElixirToPipe<cr>", { buffer = true, noremap = true })
             vim.keymap.set("v", "<space>em", ":ElixirExpandMacro<cr>", { buffer = true, noremap = true })

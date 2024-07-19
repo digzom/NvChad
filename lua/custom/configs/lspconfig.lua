@@ -13,7 +13,7 @@ local servers = {
   "gleam",
   "pyright",
   "marksman",
-  "tailwindcss-language-server",
+  -- "tailwindcss-language-server",
 }
 
 for _, lsp in ipairs(servers) do
@@ -48,9 +48,9 @@ for _, lsp in ipairs(servers) do
         ),
         init_options = {
           userLanguages = {
-            elixir = "phoenix-heex",
+            -- elixir = "phoenix-heex",
             eruby = "erb",
-            heex = "phoenix-heex",
+            -- heex = "phoenix-heex",
             svelte = "html",
           },
         },
@@ -63,10 +63,10 @@ for _, lsp in ipairs(servers) do
           includeLanguages = {
             typescript = "javascript",
             typescriptreact = "javascript",
-            ["html-eex"] = "html",
-            ["phoenix-heex"] = "html",
-            heex = "html",
-            eelixir = "html",
+            -- ["html-eex"] = "html",
+            -- ["phoenix-heex"] = "html",
+            -- heex = "html",
+            -- eelixir = "html",
             elm = "html",
             erb = "html",
             svelte = "html",
@@ -96,8 +96,8 @@ for _, lsp in ipairs(servers) do
           "scss",
           "sass",
           "html",
-          "heex",
-          "elixir",
+          -- "heex",
+          -- "elixir",
           "eruby",
           "javascript",
           "javascriptreact",

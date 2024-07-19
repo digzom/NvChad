@@ -5,27 +5,18 @@
 local M = {}
 
 ---@type Base46HLGroupsList
-M.override = {
-  Comment = {
-    italic = true,
-  },
-}
-
-if vim.g.nvchad_theme == "gruvbox" then
-  M.override = {
-    IndentBlanklineContextStart = {
-      bg = "#2D2D2D"
-    },
-
-    CursorLine = {
-      bg = "#202020"
-    },
-  }
-end
-
+-- if vim.g.nvchad_theme == "gruvbox" then
+--   M.override = {
+--     IndentBlanklineContextStart = {
+--       bg = "#2D2D2D"
+--     },
+--
+--     CursorLine = {
+--       bg = "#202020"
+--     },
+--   }
+-- end
+--
 ---@type HLTable
-M.add = {
-  NvimTreeOpenedFolderName = { fg = "green", bold = true },
-}
-
+--
 return M

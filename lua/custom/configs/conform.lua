@@ -20,7 +20,7 @@ local options = {
     end,
     sh = { "shfmt" },
     go = { "gofmt", "goimports" },
-    elixir = { "mix format" },
+    -- elixir = { "mix format" },
     lsp_fallback = true,
     -- elixir = { "mix format" },
   },

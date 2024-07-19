@@ -14,12 +14,12 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
     "gleam",
-    "python"
+    "python",
   },
   indent = {
     enable = true,
     disable = {
-      "python"
+      "python",
     },
   },
   incremental_selection = {
@@ -29,14 +29,14 @@ M.treesitter = {
       node_incremental = "<C-s>",
       scope_incremental = "<C-l>",
       node_decremental = "<C-x>",
-    }
+    },
   },
   highlights = {
-    enable = false
+    enable = false,
   },
-  set_custom_captures = {
-    ["@string.atom.elixir"] = "ThisOne"
-  }
+  -- set_custom_captures = {
+  --   ["@string.atom.elixir"] = "ThisOne"
+  -- }
 }
 
 M.mason = {
@@ -44,6 +44,7 @@ M.mason = {
     -- lua stuff
     "lua-language-server",
     "stylua",
+    "eslint-lsp",
 
     -- web dev stuff
     "css-lsp",
